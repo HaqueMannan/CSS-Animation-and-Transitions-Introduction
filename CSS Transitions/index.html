@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>CSS Animation & Transitions - Part 1</title>
+        <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h1><u>Animation & Transitons</u></h1>
+        <hr>
+        <h2>Part 1 - Transitions</h2>
+        <p>Syntax for CSS Transition: <br><br>
+            <div class="syntax-colour">
+            <span id=col-text1>.element</span> { <br>
+                <span id=col-text2>transition</span>: <span id=col-text3>[property]</span> <span id=col-text4>[duration]</span> <span id=col-text5>[ease]</span> <span id=col-text6>[delay]</span>; <br>
+            } <br><br>
+            </div>
+
+            Example: <br><br>
+            <div class="syntax-colour">
+                <span id=col-text1>.className</span> { <br>
+                    <span id=col-text2>transition</span>: <span id=col-text3>opacity</span> <span id=col-text4>300ms</span> <span id=col-text5>ease-in-out</span> <span id=col-text6>1s</span>; <br>
+                } <br><br>
+                </div>
+            - Opacity = the element we are animating/transitioning. <br>
+            - 300ms = the duration of the transition i.e. 300 mili-seconds. <br>
+            - ease-in-out = a timing function; how the transition should be applied throughout the duration. <br>
+            - 1s = delay the animation by 1 second. <br><br>
+
+            <strong>Important Note: </strong> you can give more than 1 transition to any given element. Just repeat from <span id=col-text3>[property]</span> and end with a semicolin (;) for a new transition on the same element.
+        </p>
+        <hr>
+
+        <h2>Animatable Properties</h2>
+        <p>
+            <em>What can we animate?</em> <br>
+            - font-size: <br>
+            - background-colour: <br>
+            - width: <br>
+            - left: <br>
+            <a href="http://oli.jp/2010/css-animatable-properties/">List of more animatable properties.</a><br>
+            <a href="https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">Useful article on performance animation for further reading.</a> <br><br>
+
+            position: scale: rotation: & opacity: are considered the four performance properties. Trying to animate anything else you risk the performace i.e. frames per seconds (fps) performace.<br><br>
+            <q>If you animate anything else, it's at your own risk, and the chances are you're not going to hit a silky smooth 60fps.</q>
+        </p>
+        <hr>
+
+        <h2>Triggering</h2>
+        <p>
+            There are many different ways to trigger a transition. The main two ways are:
+            1. Hover pseudo classes <br>
+            2. Class changes <br><br>
+        </p>
+        <hr>
+
+        <h2>Transition Example</h2>
+        <p>Hover over the box to see it transition animate: <br>
+            Look at the styles.css files for comment. The Transform property is on the Hover Trigger event while the Transition sits in the element listening for the transform property. Notice how the box jitters when it tries to move, thats because the box trigger is moving. <br>
+            
+            In the second box we created a trigger element which will offload the trigger from the element we wish to animate.
+        </p>
+        <div class="box"></div>
+
+        <div class="trigger">
+            <div class="box2"></div>
+        </div>
+
+        <p>Chrome browser has a developer tool where you can look at elements properties. One of the useful features are the animation <span id=col-text5>[ease]</span> property. Go into the Developer Tool, look for the box div class in the elements tab and on the styles panel click on the little icon near ease-in-out. This will provide a pop-up which will show you the a vidual representation of the timing function. You can play with this to preview different results.
+        </p>
+
+        <a href="../CSS Animations and Keyframes/index.html" class="button">Go to Part 2</a>
+
+    </body>
+</html>

@@ -1,0 +1,52 @@
+/* Minified - Ignore - HTML Format/Colouring */
+
+body{padding: 40px; margin-bottom: 100px; font-family: 'Bitter', serif;}
+
+h1{text-align: center; font-weight: 700; font-size: 40px}
+h2{font-weight: 700; font-size: 30px}
+a{text-decoration: none; color: orangered;}
+a.button{display: inline-block; border: 20px solid #00009e; background: #00009e; color: white;}
+q{color: #aaaaaa;}
+hr{border: 0.5px solid #e0e0e0}
+/* First Paragraph Syntax colouring */
+.syntax-colour{color: #aaaaaa;}
+#col-text1{padding-right: 10px; color: blue;} #col-text2{padding-right: 10px; color: #a01da0;} #col-text3{padding-right: 10px; color: #00ff00;} #col-text4{padding-right: 10px; color: #ff9100;} #col-text5{padding-right: 10px; color: #ff00c8;} #col-text6{padding-right: 10px; color: #00009e;}
+
+/*----------------------------------------*/
+
+.box{
+    display: inline-block;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    transition: transform 300ms ease-in-out
+    /* transform is the property, 300ms is the duration, ease-in-out is the timing function and we omitted the delay as we do not want a delay on this transition. The transition is always on looking for the transform property. */
+}
+
+.box:hover{
+    transform: translate(200px, 150px) rotate(20deg); 
+    /* moving the box 200px to the right and 150px to the bottom and rotating the box by 20 degress. */
+
+    /* Hover is the Trigger for the tranform property. You put the destination of the style on the Trigger Event and the transition is always on the element that is looking for the change in the property. */
+}
+
+.trigger{
+    width: 150px;
+    height: 150px;
+    border: 20px solid #999;
+    background: #ddd
+}
+
+.box2{
+    display: inline-block;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    transition: transform 300ms ease-in-out;
+    pointer-events: none; /* This property prevents any registering of hovers or clicks on this element. i.e. this is no longer an interactive element and can only be viewed. */
+}
+
+.trigger:hover .box2{
+    transform: translate(200px, 150px) rotate(20deg); 
+    /* We are using the .trigger class as the trigger but applying the transform animation to the child property .box2 - this prevents any jttering in the transition animation. */
+}
