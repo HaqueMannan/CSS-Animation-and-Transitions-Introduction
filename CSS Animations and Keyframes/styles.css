@@ -1,0 +1,211 @@
+/* Minified - Ignore - HTML Format/Colouring */
+body{padding: 40px; margin-bottom: 100px; font-family: 'Bitter', serif;}
+
+h1{text-align: center; font-weight: 700; font-size: 40px;}
+h2{font-weight: 700; font-size: 30px}
+a{text-decoration: none; color: orangered;}
+a.button{display: inline-block; border: 20px solid #00009e; background: #00009e; color: white;}
+q{color: #aaaaaa;}
+p u{font-size:20px;}
+hr{border: 0.5px solid #e0e0e0}
+/* First Paragraph Syntax colouring */
+.syntax-colour{color: #aaaaaa;}
+#col-text1{padding-right: 10px; color: blue;} #col-text2{padding-right: 10px; color: #a01da0;} #col-text3{padding-right: 10px; color: #00ff00;} #col-text4{padding-right: 10px; color: #ff9100;} #col-text5{padding-right: 10px; color: #ff4ad8;} #col-text6{padding-right: 10px; color: #00009e;} #col-text7{padding-right: 10px; color: #009e7c;} #col-text8{padding-right: 10px; color: #db2294;} #col-text9{padding-right: 10px; color: #ff0000;} #col-text10{padding-right: 10px; color: #9e003d;}
+
+.container1, .container2, .container3 .container4 .container5{ display: flex;}
+.container1{flex-direction: column;}
+.container2{justify-content:space-between; justify-content: center; flex-wrap:wrap; padding: 0 100px;}
+.container5{padding-bottom: 20px;}
+.header{order:1;} .Title{order: 2;}
+.content1{padding: 0 50px; order: 1;} .content2{padding: 0 50px; order: 2;}
+.content3{flex: 1; order: 1;}
+
+/*----------------------------------------*/
+        /* KeyFrames Examples */
+/*----------------------------------------*/
+
+.box1{
+    display: inline-block;
+    text-align: center;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    position: relative;
+    animation: myFrames 2s ease-in-out 0s infinite; /* animation is caling the keyframe myFrames. Without the keyframe nothing will animate. the animation function determines the timing function of the animation similar to Transitions. */
+}
+
+.box2{
+    display: inline-block;
+    text-align: center;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border: 1px solid black;
+    margin: 5px;
+    animation: myFramesAlt 2s ease-in-out 0s infinite;
+}
+
+.box3{
+    display: inline-block;
+    text-align: center;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    position: relative;
+    animation: myFramesAlt2 2s ease-in-out 0s infinite;
+}
+
+.box4{
+    display: inline-block;
+    text-align: center;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    position: relative;
+    animation: myFramesAlt3 2s ease-in-out 0s infinite;
+}
+
+.box5{
+    display: inline-block;
+    text-align: center;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    position: relative;
+    animation: myFramesAlt4 2s ease-in-out 0s infinite;
+}
+
+/* We have created the keyframe called myFrames which provides the transition properties for the animation. In our case we are increasing the width of the box starting at 150px and ending at 250px. */
+@keyframes myFrames {
+    from{
+        width: 150px;
+    }
+    to{
+        width: 250px;
+        background: orangered;
+    }
+}
+
+/* An Alternate way of writting the above keyframes. */
+@keyframes myFramesAlt {
+    0%{
+        width: 150px;
+    }
+    100%{
+        width: 250px;
+        background: orangered;
+    }
+}
+
+/* Adding more keyframes than the start and end using the alternative method. */
+@keyframes myFramesAlt2 {
+    0%{
+        width: 150px;
+    }
+    50%{
+        height: 80px;
+    }
+    100%{
+        width: 250px;
+        background: orangered;
+    }
+}
+
+/* We can define 100% more than once. The height will remain at 80px from 50% to 100%. */
+@keyframes myFramesAlt3 {
+    0%{
+        width: 150px;
+    }
+    50%, 100%{
+        height: 80px;
+    }
+    100%{
+        width: 250px;
+        background: orangered;
+    }
+}
+
+/* We can create a pause in the animation as seen below - between 30% to 70% there are no changes to the transition which causes a delay effect in the animation. */
+@keyframes myFramesAlt4 {
+    0%{
+        width: 150px;
+    }
+    30%, 70%{
+        width: 210px;
+    }
+    100%{
+        width: 300px;
+    }
+}
+
+/* This uses javascript - javascript is not covered in this lesson but used as a demonstration of what can be achieved on the animation-running-state. */
+.box6{
+    display: inline-block;
+    text-align: center;
+    background: pink;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    position: relative;
+
+    animation-name: myFramesLongHand;
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+    animation-delay: 0s; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    /* animation-play-state: running; */ /* not needed as play-state by default is running */
+}
+
+.box6.is-paused{
+    animation-play-state: paused;
+}
+
+@keyframes myFramesLongHand {
+    from{
+        width: 150px;
+    }
+    to{
+        width: 250px;
+        background: orangered;
+    }
+}
+
+.box7{
+    display: inline-block;
+    text-align: center;
+    background: blueviolet;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    position: relative;
+
+    animation-name: myFramesLongHandAlt;
+    animation-duration: 300ms; 
+    animation-timing-function: ease-in-out; 
+    animation-delay: 0s; 
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes myFramesLongHandAlt {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

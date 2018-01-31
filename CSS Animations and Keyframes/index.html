@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>CSS Animation & Transitions - Part 2</title>
+        <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".box6").click(function(){
+                    $(".box6").toggleClass("is-paused")
+                })
+            })
+        </script>
+        <script type="text/javascript">
+            $('html').on("click", function(){
+                $(this).find(".container5").append('<div class="box7">')
+            })
+        </script>
+    </head>
+
+    <body>
+        <div class="container1">
+            <div class="header">
+                <h1><u>Animation & Transitons</u></h1>
+                <hr>
+            </div>
+            <div class="Title">
+                <h2>Part 2 - Animation & Keyframes</h2>
+                <hr>
+                <h2>@Keyframes</h2>
+                <p><u>Syntax for Keyframes:</u></p> <br>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="content1">
+                <div class="syntax-colour">
+                <br><br>
+                    <span id="col-text1">@keyframes</span> <span id=col-text4>[name]</span> {</p>
+                    <span id="col-text2" style="padding-left: 30px;">from</span> {</p>
+                    <span id="col-text3" style="padding-left: 60px;">[styles];</span>
+                    <p style="padding-left: 30px;">}</p>
+                    <span id="col-text2" style="padding-left: 30px;">to</span> {</p>
+                    <span id="col-text3" style="padding-left: 60px;">[styles];</span>
+                    <p style="padding-left: 30px;">}</p>
+                    } <br><br>
+                </div>
+            </div>
+            <div class="content2">
+                Example: <br><br>
+                <div class="syntax-colour">
+                    <span id="col-text1">@keyframes</span> <span id=col-text4>myFrames</span> {</p>
+                    <span id="col-text2" style="padding-left: 30px;">from</span> {</p>
+                    <span id="col-text3" style="padding-left: 60px;">height: 200px;</span> <br>
+                    <span id="col-text3" style="padding-left: 60px;">background: orange;</span>
+                    <p style="padding-left: 30px;">}</p>
+                    <span id="col-text2" style="padding-left: 30px;">to</span> {</p>
+                    <span id="col-text3" style="padding-left: 60px;">height: 400px;</span> <br>
+                    <span id="col-text3" style="padding-left: 60px;">background: orangered;</span>
+                    <p style="padding-left: 30px;">}</p>
+                    } <br><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="content3">
+                - @Keyframes = initialise/setup a Keyframe to be called on by the animation. <br>
+                - [name] = the name of the animation. This can be anything you like. We will use the name later on to call the selector. <br>
+                - From & TO = declarations for the From (start) keyframe and the To (end) Keyframe. <br>
+                - [styles] = what is changing i.e. the initial state and the ending state should be like. <br><br>
+
+                - Keyframes do nothing on their own, this is why Animation and Keyframes are paired together to create the animation. <br><br>
+            </div>
+        </div>
+
+        <div class="container4">
+            <p><u>@Keyframes Examples:</u></p>
+            <p>Please refer to the HTML & Sourcecode within div class container4.</p>
+            <div class="box1">Box 1</div>
+            <div class="box2">Box 2</div>
+            <div class="box3">Box 3</div>
+            <div class="box4">Box 4</div>
+            <p>Box 1 is trying to call a keyframe called myFrame, without the Keyframe this will do nothing i.e will not animate.</p>
+            <p>Box 2 is an alternative way of writing the same Keyframe as Box 1; However, this provides more flexibility/control over the animation Transition as we can add more keyframes that the Start and the End - for example we can add 50% for the middle of the animation and so on.</p>
+            <p>Box 3 provides this example - we have also animated the height of the box at 50%.</p>
+            <p>In Box 4, you can define 100% more than once - as you can see the box height remains the same as it shrinks throught out the whole animation.</p>
+            <div class="box5">Box 5</div>
+            <p>We can create a delayed effect as seen in Box 5.</p>
+            <hr>
+        </div>
+
+        <div class="container5">
+            <h2>Animation</h2>
+            <p><u>Syntax for Animation:</u></p> <br>
+
+                <div class="syntax-colour">
+                    <div class="syntax-colour">
+                        <span id=col-text1>.element</span> { <br>
+                        <span id=col-text2>animation</span>: <span id=col-text3>[name]</span> <span id=col-text4>[duration]</span> <span id=col-text5>[timing-function]</span> <span id=col-text6>[delay]</span> <span id=col-text7>[iteration-count]</span> <span id=col-text8>[direction]</span> <span id=col-text9>[fill mode]</span> <span id=col-text10>[play-state]</span>; <br>
+                        } <br><br>
+                    </div>
+                </div>
+                <div class="syntax-colour">
+                    Example: <br><br>
+                    <div class="syntax-colour">
+                        <span id=col-text1>.element</span> { <br>
+                        <span id=col-text2>animation</span>: <span id=col-text3>myFrames</span> <span id=col-text4>2s</span> <span id=col-text5>ease-in-out</span> <span id=col-text6>0s</span> <span id=col-text7>infinite</span> <span id=col-text8>forwards</span> <span id=col-text9>normal</span> <span id=col-text10>paused</span>; <br>
+                        } <br><br>
+                    </div>
+                </div>
+
+                <p>The name should tie the Keyframe to the Animation. The Keyframe relates to what the animation does while the Animation relates to how the animation is done.</p>
+                <p>Note: CSS allows you to write animation properties in shorthand and we do not need to specify all the criteria above (see the box examples). You should take the time to understand all the different properties listed above and its effect on the animation behaviours</p> <br>
+                <p>The short-hand syntax:</p>
+                <div class="syntax-colour">
+                    <span id=col-text1>.box1</span> { <br>
+                    <span id=col-text2>animation</span>: <span id=col-text3>myFrames</span> <span id=col-text4>2s</span> <span id=col-text5>ease-in-out</span> <span id=col-text6>0s</span> <span id=col-text7>infinite</span>; <br>
+                    } <br><br>
+                </div>
+                <p>is the same as writing the long-hand syntax:</p>
+                <div class="syntax-colour">
+                    <span id=col-text1>.box1</span> { <br>
+                    <span id=col-text3>animation-name: myFrames</span>; <br> <span id=col-text4>animation-duration: 2s</span>; <br> <span id=col-text5>animation-timing-function: ease-in-out</span>; <br> <span id=col-text6>animation-delay: 0s</span>; <br> <span id=col-text7>animation-iteration-count: infinite</span>; <br> <span id=col-text8>animation-direction: forward</span>; <br> <span id=col-text9>animation-fill-mode: normal</span>; <br> <span id=col-text10>animation-play-state: running</span>; <br>
+                    } <br><br>
+                </div>
+
+                <p>- Delay: relates to how long of a delay before the start of the animation (i.e. initial delay before playing out the animation.) If you wish to add delays throughtout the animation, this should be achieved through the keyframes and not the delay.</p>
+                <p>- Iteration-count: relates to the nuber of time the animation should loop. This can be 1 time, 2 time, 3 time etc. or infinate loop.</p>
+                <p>- Animation-direction: relates to which way the playhead is moving on the timeline i.e. forward, reverse or alternate.</p>
+                <p>- Animation-fill-mode: relates to how the element will look like after the animation has ended/stopped playing. "Forwards" will use the last frame, other property keywords are normal, forwards, inherit etc.</p>
+                <p>Animation-run-state: relates to the running state. There are only 2 states, running and paused. You can use javascipt to pause an animation in the middle of the animation. Click on the box below to pause the animation.</p>
+
+                <div class="box6">Box 6</div>
+
+                <h2>Triggering</h2>
+                <p>There are 3 ways you can trigger an animation: <br>
+                1. Hover pseudo classes <br>
+                2. Class changes <br>
+                3. New elements <br>
+                </p>
+
+                <p>In the box example above we used a Class Change to change the class of an element using javascript to trigger the animation-play-state: pause attribute.</p>
+
+                <p class="newElementTrigger">New element trigger example below: <br>
+                This uses javascript to create a new element i.e. div class of box7 which has an animation everytime we click on the html page. Try it!</p>
+        </div>
+
+        <a href="../CSS Transitions" class="button">Go to Part 1</a>
+        <a href="../Using Animation in UX" class="button">Go to Part 3</a>
+    </body>
+</html>
